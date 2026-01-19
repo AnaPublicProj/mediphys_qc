@@ -1,0 +1,85 @@
+# QC CONFIGURATION
+
+# This file sets the QC passing rules for the machines.
+
+# PROTOCOL EXPLANATIONS:
+# 1. AAPM TG-142 (Linac): 
+#    This tells us how often to check the machine (daily/monthly/annual) and how strictly.
+#
+# 2. AAPM TG-66 (CT Scanner):
+#    Specific rules for CT scanners used in Radiation Therapy planning. It focuses 
+#    heavily on geometric accuracy and density accuracy.
+#
+# 3. NEMA NU-1 (Gamma Camera):
+#    Performance measurements for nuclear medicine cameras. It defines how we test 
+#    uniformity and resolution.
+#
+# 4. ACR MRI QC Manual (MRI):
+#    This protocol focuses on image quality 
+#    metrics like geometric distortion and signal strength.
+
+Linac_1:
+  # The radiation machine used for cancer treatment.
+  
+  # Metric: Dose Output
+  # Is the machine delivering the exact amount of radiation we expect?
+
+  # Rule: It must be within 2.0 cGy of the target (100.0).
+  Dose_Output:
+    target: 100.0
+    tolerance_abs: 2.0
+    unit: "cGy"
+  
+  # Metric: Beam Symmetry
+  # Is the radiation beam even on both the left and right sides?
+
+  # Rule: It cannot vary by more than 3%.
+  Symmetry:
+    target: 0.0
+    tolerance_abs: 3.0
+    unit: "%"
+
+CT_Scanner_A:
+  # The machine used for 3D X-ray imaging.
+
+  # Metric: Water Calibration
+  # When we scan plain water, the computer should read it as "0".
+
+  # Rule: If it drifts more than 4 units away from 0, it fails.
+  Water_HU:
+    target: 0.0
+    tolerance_abs: 4.0
+    unit: "HU"
+
+Gamma_Cam_SPECT:
+  # A nuclear medicine camera that detects radioactive tracers in the body.
+
+  # Metric: Uniformity
+  # If we take a picture of a flat radiation source, does it look smooth?
+
+  # Rule: We don't want "hot spots" or "cold spots" varying by more than 5%.
+  Uniformity:
+    target: 0.0
+    tolerance_abs: 5.0
+    unit: "%"
+
+MRI_Scanner_3T:
+  # High-strength magnetic imaging scanner.
+
+  # Metric: Signal-to-Noise Ratio
+  # Is the image signal strong and clear compared to the background static?
+
+  # Rule: We expect a value of 50. If it drops too low (below 45), the image is too grainy.
+  SNR_Coil_1:
+    target: 50.0
+    tolerance_abs: 5.0
+    unit: "dB"
+  
+  # Metric: Geometric Distortion
+  # Is the image warped? for example does a straight line look curved?
+
+  # Rule: The image cannot be warped by more than 1 millimeter.
+  Geometric_Distortion:
+    target: 0.0
+    tolerance_abs: 1.0 
+    unit: "mm"
