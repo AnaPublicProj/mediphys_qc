@@ -92,7 +92,12 @@ After execution, the ***qc_reports/*** directory will contain:
 
 ### Examples of plots (All available in *demo_results/* ):
 
+<img width="1000" height="500" alt="CT_Scanner_A_Water_HU" src="https://github.com/user-attachments/assets/4f951d69-7d07-46e9-8d58-1e735f69f90d" />
 
 
 
+<img width="1000" height="500" alt="Linac_1_Dose_Output" src="https://github.com/user-attachments/assets/ae2323ba-7e7b-4cea-8e10-3f6febec5f60" />
 
+
+
+<img width="1000" height="500" alt="MRI_Scanner_3T_Geometric_Distortion" src="https://github.com/user-attachments/assets/b10c87bd-11a8-49d2-89b8-282c8808b5a5" />
