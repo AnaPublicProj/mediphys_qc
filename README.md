@@ -92,12 +92,6 @@ After execution, the ***qc_reports/*** directory will contain:
 
 ### Examples of plots (All available in *demo_results/* ):
 
-<img width="865" height="456" alt="Screenshot 2026-01-11 at 22 00 34" src="https://github.com/user-attachments/assets/4a44b214-7bb9-4b24-9bbd-e3309cade347" />
-
-<img width="865" height="459" alt="Screenshot 2026-01-11 at 22 01 07" src="https://github.com/user-attachments/assets/7615c7c9-ee07-4e76-a274-14d1a53764fd" />
-
-<img width="864" height="456" alt="Screenshot 2026-01-11 at 22 01 45" src="https://github.com/user-attachments/assets/ff91a712-0c19-4298-9fd4-0ea7e51b916b" />
-
 
 
 
